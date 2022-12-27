@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Filter Images</title>
+       <link rel="stylesheet" href="style.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <style>
+          body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+          h3 {font-family: "Montserrat", sans-serif}
+          .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+          .fa-anchor,.fa-coffee {font-size:200px}
+       </style>
+    </head>
+    <body>
+        
+      <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+      <!-- Header -->
+      <header class="w3-container w3-red w3-center" style="padding:128px 16px">
+        <h1 class="w3-margin w3-jumbo">IMAGE FILTER</h1>
+        <p class="w3-xlarge">Upload and apply filters to images!</p>
+        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"><a href="#scrollToHere">Get Started</a></button>
+      </header>
+
+      <!-- First Grid -->
+      <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+          <h1>About</h1>
+          <p class="w3-text-grey">This Image Filter webpage uses the dukelearntoprogram SimpleImage library's methods to manipulate 
+             image pixels and JavaScript functions to code various filters. Part of w3Schools' CSS template has been used for webpage design.
+          </p>     
+        </div>
+      </div>
+
+      <div class="divClass" id="scrollToHere">
+        <h3>LOAD IMAGE</h3>
+        <p>
+          Upload image:
+          <input type="file" multiple="false" accept="image/*" id="img" onchange="loadImage()">
+        </p>
+        <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Image size (px)" onclick="imgSize()"> 
+        <span id="s"></span>
+      </div>
+        
+      <div class="divClass">
+        <h3>IMAGE: ORIGINAL/FILTERED</h3>
+        <canvas id="cv1"></canvas>
+        <canvas id="cv2"></canvas>
+      </div>
+        
+      <div class="divClass">
+        <h3>CHOOSE FILTER</h3>
+        <div class="divClass">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Grayscale" onclick="doGray()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Red" onclick="doRed()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Rainbow" onclick="doRainbow()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Blur" onclick="doBlur()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Mirror" onclick="doMirror()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Up-side down" onclick="doUpsideDown()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Corner Frame" onclick="doCornerFrame()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Invert colors" onclick="doInvert()">
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Chess board pattern" onclick="doChessBoard()">
+        </div>
+        <div class="divClass">
+          <p> <span>Color Filter:</span>
+            <input type="color" value="#000" onchange = "applyColor(this.value)" id="clr">
+          </p>
+        </div>
+        <div class="divClass">
+          <p> 
+            Frame: 
+            <br> 
+            Set frame size
+            <input type="range" id="sizeInput" min="1" max="50" value="10" oninput="resizeFrame(this.value)"/>
+            <output id="sizeOutput">10</output>
+            <br>
+            Set frame color
+            <input type="color" value="#000" onchange = "frameColor(this.value)" id="clr">
+            <br>
+          </p>
+          <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Apply" onclick="doFrame()">
+        </div>
+        <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Reset Image" onclick="doReset()">
+        <input type="button" class="w3-button w3-white w3-border w3-padding-small w3-medium w3-margin" value="Clear canvas" onclick="clearCanvas()">  
+      </div>
+      
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+        <div class="w3-xlarge w3-padding-32">
+          <i class="fa fa-github w3-hover-opacity"><a href="https://github.com/kas140472">GitHub</a></i>
+          <br>
+          <i class="fa fa-linkedin w3-hover-opacity"><a href="https://www.linkedin.com/in/kriti-shukla-258396182/">LinkedIn</a></i>
+        </div>
+        <p>Made by <a href="https://github.com/kas140472" target="_blank">Kriti</a></p>
+      </footer>
+      
+      <script src="functions.js"></script>
+        
+    </body>
+</html>

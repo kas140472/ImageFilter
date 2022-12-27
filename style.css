@@ -1,0 +1,27 @@
+canvas 
+{
+  width : 47%;
+  height: 20%;
+  margin:10pt;
+  border: 1px solid gray;
+} 
+
+h1 
+{
+  color: black;
+  text-align: center;
+}
+
+p 
+{
+  font-family: verdana;
+  font-size: 15px;
+  margin: 17px;
+}
+
+.divClass
+{
+  border: 1px burlywood solid;
+  margin: 5px;
+  padding: 5px;
+}
